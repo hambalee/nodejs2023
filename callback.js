@@ -1,14 +1,14 @@
-function calculate(x, y, callback) {
-    console.log('processing...');
+//Download file 3s => display file name
+function download(callback) {
+    console.log('downloading...');
+    const filename = 'document.docx'
     setTimeout(() => {
-        const sum = x + y
-        callback(sum)
-    }, 2000);
+        callback(filename)
+    }, 3000);
 }
 
-function display(result) {
-    console.log('sum=' + result);
+function displayFileName(result) {
+    console.log('filename: ' + result);
 }
 
-const result = calculate(100, 500, display)
-// display(result)
+download(displayFileName)
