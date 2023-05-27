@@ -1,17 +1,10 @@
-const http = require('http')
+const express = require('express')
+const app = express()
 
-const server = http.createServer(function (req, res) {
-    const path = req.url
-    console.log("path is " + path);
-    if (path === '/home') {
-        res.write("<h1>Hello Home</h1>")
-        res.end()
-    } else {
-        res.statusCode = 200;
-        res.end("<h1>404 page not found</h1>")
-    }
+app.use((req, res) => {
+    res.send('Hello World!')
 })
 
-server.listen(3001, () => {
-    console.log('start server port 3001');
+app.listen(3001, () => {
+    console.log('Server is running on port 3001')
 })
