@@ -1,12 +1,8 @@
-console.log("---Synchronous---")
-console.log("Start")
-console.log("Downloading...")
-console.log("End")
+const http = require('http')
 
-console.log("---Asynchronous---")
-console.log("Start")
-setTimeout(() => {
-    console.log("Downloading...")
-}, 2000)
-console.log("End")
+const server = http.createServer(function (req, res) {
+    res.write("Hello odds node js naja")
+    res.end()
+})
 
+server.listen(3001)
