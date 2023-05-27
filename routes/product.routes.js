@@ -9,8 +9,15 @@ router.get("/", (req, res) => {
     res.sendFile(indexPage)
 })
 
-router.get("/product", (req, res) => {
+router.get("/products", (req, res) => {
     res.send("Hello product")
+})
+
+router.get("/product/:id", (req, res) => {
+    const productId = req.params.id
+    if(productId == 1) {
+        res.sendFile(path.join(__dirname, "../templates/product1.html"))
+    }
 })
 
 module.exports = router
